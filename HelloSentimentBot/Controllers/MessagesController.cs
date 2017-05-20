@@ -22,7 +22,7 @@ namespace HelloSentimentBot
                 string messageText = string.Empty;
                 //Create a connector client
                 ConnectorClient connector = new ConnectorClient(new Uri(activity.ServiceUrl));
-                // Reply user with message - Hello 
+                // Call method to analyze user chat
                 messageText = await SentimentAnalysis.DoSentimentAnalysis(activity.Text);
                 Activity message = activity.CreateReply(messageText);
                 //Send Reply message
